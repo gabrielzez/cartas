@@ -123,49 +123,6 @@
         .envelope.aberto .conteudo {
             opacity: 1;
         }
-
-        /* Estilos para os corações */
-        .heart {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: red;
-            transform: rotate(-45deg);
-            animation: fall 2s ease-in-out forwards;
-            opacity: 0;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: red;
-            border-radius: 50%;
-        }
-
-        .heart::before {
-            top: -15px;
-            left: 0;
-        }
-
-        .heart::after {
-            left: 15px;
-            top: 0;
-        }
-
-        /* Animação de queda dos corações */
-        @keyframes fall {
-            0% {
-                opacity: 1;
-                transform: translateY(-50px) rotate(-45deg);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(100vh) rotate(-45deg);
-            }
-        }
     </style>
 </head>
 <body>
@@ -258,25 +215,6 @@
         function abrirEnvelope(id) {
             const envelope = document.getElementById(id);
             envelope.classList.toggle('aberto');
-
-            // Função para gerar corações
-            gerarCoracoes();
-        }
-
-        function gerarCoracoes() {
-            for (let i = 0; i < 10; i++) { // Gera 10 corações por vez
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                // Coloca os corações em posições aleatórias ao longo da tela
-                heart.style.left = `${Math.random() * 100}%`;
-
-                document.body.appendChild(heart);
-
-                // Remove o coração após a animação de queda
-                setTimeout(() => {
-                    heart.remove();
-                }, 2000); // Duração da animação
-            }
         }
     </script>
 

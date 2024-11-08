@@ -268,7 +268,8 @@
                 const heart = document.createElement('div');
                 heart.className = 'heart';
                 // Coloca os corações em posições aleatórias ao longo da tela
-                heart.style.left = ${Math.random() * 100}%;
+                heart.style.left = `${Math.random() * 100}%`;
+
                 document.body.appendChild(heart);
 
                 // Remove o coração após a animação de queda
